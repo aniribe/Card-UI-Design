@@ -1,0 +1,182 @@
+:root {
+  --optionBackground1: url("images/tumblr_1.jpg");
+  --optionBackground2: url("images/tumblr_2.jpg");
+  --optionBackground3: url("images/tumblr_3.jpg");
+  --optionBackground4: url("images/tumblr_4.jpg");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background: #222;
+}
+
+/* .credit {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #000;
+} */
+
+.options {
+  display: flex;
+  /* align-items: stretch; */
+  justify-content: center;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 400px;
+  /* background: #222; */
+}
+
+.option {
+  position: relative;
+  overflow: hidden;
+  /* min-width: 60px; */
+  width: 60px;
+  margin: 10px;
+  background-size: cover;
+  border-radius: 40px;
+  /* background-position: left 10% top 20%; */
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  background: var(--defaultBackground, #e6e9ed);
+  box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.option::before {
+  content: "";
+  width: 65px;
+  height: 410px;
+  background: #222;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.option:nth-child(1) {
+  background: var(--optionBackground1);
+  --defaultBackground: #ed5565;
+  /* background-position: left 30% top 40%; */
+  background-position: 65px 0px;
+  background-repeat: no-repeat;
+}
+
+.option:nth-child(2) {
+  background: var(--optionBackground2);
+  --defaultBackground: #fc6e51;
+  /* background-position: left 30% top 40%; */
+  background-position: 65px 0px;
+  background-repeat: no-repeat;
+}
+
+.option:nth-child(3) {
+  background: var(--optionBackground3);
+  --defaultBackground: #ffce54;
+  /* background-position: left 30% top 40%; */
+  background-position: 65px 0px;
+  background-repeat: no-repeat;
+}
+
+.option:nth-child(4) {
+  background: var(--optionBackground4);
+  --defaultBackground: #2ecc71;
+  /* background-position: left 30% top 40%; */
+  background-position: 65px 0px;
+  background-repeat: no-repeat;
+}
+
+.option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: auto 100%;
+}
+
+.option.active .shadow {
+  box-shadow: inset 0 -120px 120px -120px black,
+    inset 0 -120px 120px -100px black;
+}
+
+.option.active .label {
+  bottom: 20px;
+  left: 20px;
+}
+
+.option.active .info > div {
+  left: 0px;
+  opacity: 1;
+}
+
+/* .option:not(.active) {
+  flex-grow: 1;
+} */
+
+.option:not(.active) .shadow {
+  bottom: -40px;
+  box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
+}
+
+.option:not(.active) .info > div {
+  left: 20px;
+  opacity: 0;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.label {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: var(--defaultBackground);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
+}
+
+.info > div {
+  position: relative;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+
+.main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.sub {
+  transition-delay: 0.1s;
+}
