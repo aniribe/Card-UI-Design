@@ -1,8 +1,8 @@
 :root {
-  --optionBackground1: url("images/tumblr_1.jpg");
-  --optionBackground2: url("images/tumblr_2.jpg");
-  --optionBackground3: url("images/tumblr_3.jpg");
-  --optionBackground4: url("images/tumblr_4.jpg");
+  --optionBackground1: url("images/person-cover-with-paint.jpg");
+  --optionBackground2: url("images/grayscale-photo-of-chair-inside-the-establishment.jpg");
+  --optionBackground3: url("images/black-and-white-color-curve-eye.jpg");
+  --optionBackground4: url("images/road.jpg");
 }
 
 body {
@@ -12,7 +12,7 @@ body {
   overflow: hidden;
   height: 100vh;
   font-family: "Roboto", sans-serif;
-  background: #222;
+  background: #dae1eb;
 }
 
 /* .credit {
@@ -40,20 +40,22 @@ body {
   /* min-width: 60px; */
   width: 60px;
   margin: 10px;
-  background-size: cover;
+
+  /* background-size: cover; */
   border-radius: 40px;
-  /* background-position: left 10% top 20%; */
+  background-position: left 10% top 40%;
   cursor: pointer;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: all 0.5s;
   background: var(--defaultBackground, #e6e9ed);
-  box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2),
+    -3px -3px 15px rgba(255, 255, 255, 0.3);
 }
 
 .option::before {
   content: "";
   width: 65px;
   height: 410px;
-  background: #222;
+  background: #dae1eb;
   position: absolute;
   top: 0;
   left: 0;
@@ -65,6 +67,7 @@ body {
   /* background-position: left 30% top 40%; */
   background-position: 65px 0px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .option:nth-child(2) {
@@ -73,6 +76,7 @@ body {
   /* background-position: left 30% top 40%; */
   background-position: 65px 0px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .option:nth-child(3) {
@@ -81,6 +85,7 @@ body {
   /* background-position: left 30% top 40%; */
   background-position: 65px 0px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .option:nth-child(4) {
@@ -92,12 +97,14 @@ body {
 }
 
 .option.active {
-  flex-grow: 10000;
+  flex-grow: 1000;
   transform: scale(1);
   max-width: 600px;
-  margin: 0px;
+  /* margin: 0px; */
   border-radius: 40px;
-  background-size: auto 100%;
+  /* background-size: auto 100%; */
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4),
+    -3px -3px 15px rgba(255, 255, 255, 0.3);
 }
 
 .option.active .shadow {
@@ -119,43 +126,51 @@ body {
   flex-grow: 1;
 } */
 
-.option:not(.active) .shadow {
+/* .option:not(.active) .shadow {
   bottom: -40px;
   box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
-}
+} */
 
 .option:not(.active) .info > div {
   left: 20px;
   opacity: 0;
 }
 
-.shadow {
-  position: absolute;
+/* .shadow {
+  position: relative;
   bottom: 0;
   left: 0;
-  right: 0;
   height: 120px;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
+} */
 
 .label {
   display: flex;
   position: absolute;
-  right: 0px;
+  bottom: 30px;
+  /* justify-content: center; */
+  /* margin: auto; */
+  /* right: 0px; */
+  left: 7px;
   height: 40px;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  /* transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95); */
 }
 
 .icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 40px;
-  max-width: 40px;
-  height: 40px;
+  /* min-width: 40px;
+  max-width: 40px; */
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
-  background-color: white;
+  background-color: #dae1eb;
   color: var(--defaultBackground);
+  /* box-shadow: 0.8rem 0.8rem 1.5rem rgba(0, 0, 0, 0.2),
+    -0.8rem -0.8rem 1.1rem rgba(255, 255, 255, 0.5); */
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2),
+    -3px -3px 15px rgba(255, 255, 255, 0.3);
 }
 
 .info {
@@ -169,7 +184,7 @@ body {
 
 .info > div {
   position: relative;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+  /* transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out; */
 }
 
 .main {
@@ -178,5 +193,5 @@ body {
 }
 
 .sub {
-  transition-delay: 0.1s;
+  /* transition-delay: 0.1s; */
 }
